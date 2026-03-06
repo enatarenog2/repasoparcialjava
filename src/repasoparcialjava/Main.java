@@ -5,11 +5,30 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("1. Primera parte");
+		System.out.println("2. Segunda parte");
+		System.out.println("3. Tercera parte");
+		System.out.println("4. Cuarta parte");
+		System.out.println("5. Quinta parte");
+		
+		System.out.println("Ingrese un numero");
+		int opcion = sc.nextInt();
+		switch (opcion) {
+		case 1:
 		sumaNumerosEntre4();
 		factorialNumero();
 		leerCantidad();
 		promedioNumeros();
 		sumaDigitos();
+		break;
+		case 2:
+			multiplosDe7y11();
+			leernumero();
+			leerHora();
+			break;
+		}
+		
 
 	}
 // /////////////////////////////////////////////////////////////////////////////////////////
@@ -150,6 +169,73 @@ public class Main {
 		}
 	}
 	
+	//Parte 2
+	
+	//ejercicio 6
+	//Escriba un programa que lea un número n 
+	//y determine si es múltiplo de 7 o de 11.
+	
+	static void multiplosDe7y11() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.println("Escriba un numero: ");
+		num=sc.nextInt();
+		
+		if(num%7==0) {
+			System.out.println("El numero es multiplo de 7.");
+		}else if(num%11==0){
+			System.out.println("El numero es multiplo de 11. ");
+			//operador OR verdadero si al menos una condicion es verdadera
+		}else if(num%7 !=0 || num%11 !=0){
+			System.out.println("El numero no es multiplo de 7 ni de 11.");
+		}else {
+			System.out.println("Escriba un numero valido.");
+		}
+	}
+	
+	//ejercicio 7
+	
+	//Escriba un programa que lea un número `n` 
+	//y muestre los números entre 1 y `n` que sean:
+	//- Divisibles entre 3
+	//- Pero **no** divisibles entre 2
+	
+	static void leernumero() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.println("Ingrese un numero: ");
+		num = sc.nextInt();
+		for(int i=1;i<=num;i++) {
+		if(i%3==0 && i%2 !=0) {
+			System.out.println("Los numeros divisibles entre 3 pero no entre 2 son:"+i);
+		}
+		}
+	}
+	
+	//ejercicio 8
+	
+	//Escriba un programa que lea una hora en formato 24 horas (`0–23`) y muestre:
+	//- `"Mañana"`
+	//- `"Tarde"`
+	//- `"Noche"`
+	
+	static void leerHora() {
+		Scanner sc = new Scanner(System.in);
+		int hora;
+		System.out.println("Ingrese una hora en formato de 0-23");
+		hora =sc.nextInt();
+		
+		if(hora >= 0 && hora < 12) {//operador AND, verdadero si todas las condiciones son verdaderas
+			System.out.println("Mañana. ");
+		}else if(hora<=18) {
+			System.out.println("Tarde. ");
+		}else if(hora<=23) {
+			System.out.println("Noche. ");
+		}else {
+			System.out.println("Formato de hora incorrecto");
+		}
+		
+	}
 	
 	
 // /////////////////////////////////////////////////////////////////////////////////////////
