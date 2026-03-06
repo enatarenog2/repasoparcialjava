@@ -31,6 +31,13 @@ public class Main {
 			numeroRomano();
 			leerOpcion();
 			break;
+		case 4:
+			mayorMenor();
+			tablaDivision();
+			digitosPares();
+			numerotriangular();
+			promedionegativos();
+			break;
 		}
 		
 
@@ -38,7 +45,7 @@ public class Main {
 // /////////////////////////////////////////////////////////////////////////////////////////
 // PARTE 1 CICLOS
 	
-	//ejercicio 1
+	//ejercicio 1 Ciclos y Operaciones Numericas
 	
 	// Escriba un programa que lea un número n 
 	//y muestre la suma de todos los números divisibles 
@@ -173,7 +180,7 @@ public class Main {
 		}
 	}
 	
-	//Parte 2
+	//Parte 2 Condiciones y Divisibilidad
 	
 	//ejercicio 6
 	//Escriba un programa que lea un número n 
@@ -240,7 +247,7 @@ public class Main {
 		}
 		
 	}
-	// Parte 3
+	// Parte 3 Uso switch
 	
 	//ejercicio 9
 	//Escriba un programa que use switch para convertir un número 
@@ -314,6 +321,138 @@ public class Main {
 		default:
 			System.out.println("Opcion incorrecta.");
 		}
+	}
+	
+	//Parte 4 Analisis Numerico
+	
+	//ejercicio 11
+	
+	//Escriba un programa que lea dos números `a` y `b` y muestre:
+	//- El mayor
+	//- El menor
+	//- La diferencia absoluta entre ambos
+	
+	static void mayorMenor() {
+		Scanner sc = new Scanner(System.in);
+		int a;
+		int b; 
+		System.out.println("Ingrese el primer numero: ");
+		a = sc.nextInt();
+		System.out.println("Ingrese el segundo numero: ");
+		b = sc.nextInt();
+		double diferencia = Math.abs(a-b);//metodo para calcular el valor absoluto 
+		if(a>b) {
+			System.out.println("El numero mayor es: "+ a);
+		}else {
+			System.out.println("El numero mayor es: "+ b);
+		}
+		
+		System.out.println("La diferencia absoluta entre "+a +" y "+b +" es: "+ diferencia);
+		
+	}
+	
+	//ejercicio 12
+	
+	// Escriba un programa que lea un número n 
+	// y muestre su tabla de división del 1 al 10,
+	// evitando división entre cero
+	
+	static void tablaDivision() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		double division=0;
+		System.out.println("Ingrese un numero: ");
+		num =sc.nextInt();
+		if (num!=0) {
+			for(int i=1;i<=10;i++) {
+				division= (double)num/i;//para que la operacion muestre los decimales
+				System.out.println(+num +"/"+ i+" : " + division);
+			}
+		}else {
+			System.out.println("No se puede dividir entre 0.");
+		}
+		
+	}
+	
+	//ejercicio 13
+	
+	 //Escriba un programa que lea un número n y muestre
+	 //la cantidad de dígitos pares que contiene.
+	
+	static void digitosPares() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		int contador =0;
+		System.out.println("Ingrese un numero: ");
+		num= sc.nextInt();
+		while (num != 0) {
+	        int digito = num % 10;// obtiene el ultimo digito
+	        if (digito % 2 == 0) {
+	            contador++;
+	        }
+	        num = num / 10;// elimina el ultimo digito
+	    }
+
+	    System.out.println("Cantidad de digitos pares: " + contador);
+	
+	}
+	
+	//ejercicio 14
+	 
+	//Escriba un programa que lea un número `n` 
+	//y determine si es **triangular**
+	//(Existe un `k` tal que `1 + 2 + ... + k = n`).
+	
+	static void numerotriangular() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		int suma=0;
+		
+		System.out.println("Ingrese un numero: ");
+		num=sc.nextInt();
+		for(int i=1;suma<num;i++) {
+			suma= suma+i;
+			if(suma==num) {
+				System.out.println("El numero es triangular");
+				return;
+			}
+		}
+		
+		System.out.println("El numero no es triangular");
+		
+	}
+	
+	//ejercicio 15
+	
+	//Escriba un programa que lea `n` y luego `n` números.
+	//Debe mostrar el **promedio de los números negativos**.
+	//Si no hay negativos, indicar: `"No hay negativos"`.
+	
+	static void promedionegativos() {
+		Scanner sc = new Scanner(System.in);
+		int n;
+		int num;
+		int sumanegativos=0;
+		int contador=0;
+		
+		System.out.println("Ingrese la cantidad de numero: ");
+		n = sc.nextInt();
+		
+		for(int i=1;i<=n;i++) {
+			System.out.println("Ingrese un numero");
+			num =sc.nextInt();
+			
+			if (num<0) {
+				sumanegativos= sumanegativos+num;
+				contador++;
+				}
+			}
+			if (contador>0) {
+				double promedio= (double)sumanegativos/contador;
+				System.out.println("El Promedio de la suma de negativos es: "+ promedio);
+			}else {
+				System.out.println("No hay negativos:");
+			}
 	}
 	
 	
