@@ -16,16 +16,20 @@ public class Main {
 		int opcion = sc.nextInt();
 		switch (opcion) {
 		case 1:
-		sumaNumerosEntre4();
-		factorialNumero();
-		leerCantidad();
-		promedioNumeros();
-		sumaDigitos();
+			sumaNumerosEntre4();
+			factorialNumero();
+			leerCantidad();
+			promedioNumeros();
+			sumaDigitos();
 		break;
 		case 2:
 			multiplosDe7y11();
 			leernumero();
 			leerHora();
+			break;
+		case 3:
+			numeroRomano();
+			leerOpcion();
 			break;
 		}
 		
@@ -235,6 +239,81 @@ public class Main {
 			System.out.println("Formato de hora incorrecto");
 		}
 		
+	}
+	// Parte 3
+	
+	//ejercicio 9
+	//Escriba un programa que use switch para convertir un número 
+	//del 1 al 5 en número romano:
+	
+	static void numeroRomano() {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.println("Ingrese un numero del 1 al 5");
+		num = sc.nextInt();
+		
+		switch(num) {
+		case 1: 
+			System.out.println("El numero 1 en romano es: I ");
+			break;
+		case 2:
+			System.out.println("El numero 2 en romano es: II ");
+			break;
+		case 3: 
+			System.out.println("El numero 1 en romano es: III ");
+			break;
+		case 4:
+			System.out.println("El numero 2 en romano es: IV ");
+			break;	
+		case 5: 
+			System.out.println("El numero 1 en romano es: V ");
+			break;
+		default:
+			System.out.println("Numero fuera del rango");
+			break;
+		}
+	}
+	
+	//ejercicio 10
+	
+	//Escriba un programa que lea una opción (1–3) y dos números.
+	//- Si `opcion = 1` → Sumar
+	//- Si `opcion = 2` → Restar
+	//- Si `opcion = 3` → Multiplicar
+	
+	static void leerOpcion() {
+		Scanner sc = new Scanner(System.in);
+		int num1;
+		int num2;
+		int opcion;
+		int sumar = 0;
+		int restar =0;
+		int multiplicar = 0;
+		System.out.println("Ingrese el primer numero: ");
+		num1 = sc.nextInt();
+		System.out.println("Ingrese el segundo numero: ");
+		num2 = sc.nextInt();
+		System.out.println("Elija una opcion: ");
+		System.out.println("1. sumar: ");
+		System.out.println("2. restar: ");
+		System.out.println("3. multiplicar: ");
+		opcion=sc.nextInt();
+		switch(opcion) {
+		case 1:
+			sumar= num1+num2;
+			System.out.println("La suma de "+num1 +" mas "+num2+" es: "+sumar);
+			break;
+		case 2:
+			restar= num1-num2;
+			System.out.println("La resta de "+num1 +" mas "+num2+" es: "+restar);
+			break;
+		case 3:
+			multiplicar= num1*num2;
+			System.out.println("La multiplicacion de "+num1 +" mas "+num2+" es: "+multiplicar);
+			break;
+		default:
+			System.out.println("Opcion incorrecta.");
+		}
 	}
 	
 	
