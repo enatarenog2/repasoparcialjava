@@ -38,6 +38,13 @@ public class Main {
 			numerotriangular();
 			promedionegativos();
 			break;
+		case 5:
+			multiplosDe6();
+			potenciaDe2();
+			numeroInvertido();
+			sumaParImpar();
+			gradosfahrenheit();
+			break;
 		}
 		
 
@@ -455,6 +462,108 @@ public class Main {
 			}
 	}
 	
+	//Parte 5 Patrones y Transformaciones
+	
+	//ejercicio 16
+	//Escriba un programa que lea un número n 
+	//y muestre los primeros n múltiplos de 6.
+	
+	static void multiplosDe6(){
+	Scanner sc = new Scanner(System.in);
+	int n;
+	int num=0;
+	System.out.println("Ingrese un numero");
+	n=sc.nextInt();
+	for(int i=1;i<=n;i++) {
+		num=6*i;
+		System.out.println(i+" * " + n);
+		System.out.println(num);
+	}
+	
+	}
+	
+	//ejercicio 17
+	
+	//Escriba un programa que lea un número n 
+	//y determine si es potencia de 2.
+	
+	static void potenciaDe2() {
+	Scanner sc = new Scanner(System.in);
+	int n;
+	System.out.println("Ingrese un numero: ");
+	n=sc.nextInt();
+
+    while(n % 2 == 0) {
+        n = n / 2;// si el mod es 0 entonces divide n entre 2 y si n = 1 entonces el numero es potencia de dos
+    }
+
+    if(n == 1) {
+        System.out.println("Es potencia de 2");
+    } else {
+        System.out.println("No es potencia de 2");
+    }
+		
+		
+	}
+	
+	//ejercicio 18
+	
+	//Escriba un programa que lea un número `n` 
+	//y muestre el **número invertido**.
+	//Ejemplo:
+	//`1234 → 4321`
+	
+	static void numeroInvertido() {
+	Scanner sc = new Scanner(System.in);
+	int n;
+	int invertido=0;
+	System.out.println("Ingrese un numero: ");
+	n=sc.nextInt();
+	while(n!=0) {
+		int digito=n%10;//saca el ultimo digito
+		invertido=invertido*10+digito;//construye el numero invertido
+		n=n/10;
+	}
+	System.out.println("Numero invertido: "+invertido);
+	}
+	
+	//ejercicio 19
+	
+	// Escriba un programa que lea un número n y determine si 
+	//la suma de los números del 1 al n es par o impar.
+	
+	static void sumaParImpar() {
+	Scanner sc = new Scanner(System.in);
+	int n;
+	int suma=0;
+	System.out.println("Ingrese un numero: ");
+	n=sc.nextInt();
+	
+	if(n!=0) {
+		for(int i=1;i<=n;i++) {
+			suma= suma+i;
+		}if(suma%2==0) {
+			System.out.println("La suma de los numeros es Par ");
+		}else {
+			System.out.println("La suma de los numeros es Impar");
+		}
+	}
+	}
+	
+	//ejercicio 20
+	
+	//Escriba un programa que lea una temperatura 
+	//en grados Celsius y la convierta a Fahrenheit.
+	
+	static void gradosfahrenheit() {
+	Scanner sc = new Scanner(System.in);
+	double grados;
+	System.out.println("Ingrese los grados celsius");
+	grados=sc.nextDouble();
+	double fahrenheit=(double) (grados * 9 / 5) + 32;//formula para convertir a grados Fahrenheit
+	System.out.println("Los grados celsius a fahrenheit son: "+ fahrenheit);
+	
+	}
 	
 // /////////////////////////////////////////////////////////////////////////////////////////
 }
